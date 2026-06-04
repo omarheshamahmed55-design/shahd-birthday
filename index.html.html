@@ -1,0 +1,940 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>عيد ميلاد شهودتي السكر - عالمك الخاص</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts: Cairo -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;900&display=swap" rel="stylesheet">
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+        body {
+            font-family: 'Cairo', sans-serif;
+            background-color: #0b0205;
+            color: #fce7f3;
+            overflow-x: hidden;
+        }
+        
+        @keyframes shake {
+            0%, 100% { transform: translateX(0); }
+            25% { transform: translateX(-8px); }
+            75% { transform: translateX(8px); }
+        }
+        .animate-shake {
+            animation: shake 0.2s ease-in-out 0s 2;
+        }
+
+        /* Custom Premium Minimalist Scrollbar */
+        ::-webkit-scrollbar {
+            width: 5px;
+            height: 5px;
+        }
+        ::-webkit-scrollbar-track {
+            background: rgba(11, 2, 5, 0.3);
+        }
+        ::-webkit-scrollbar-thumb {
+            background: linear-gradient(to bottom, rgba(219, 39, 119, 0.4), rgba(244, 63, 94, 0.5));
+            border-radius: 20px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: linear-gradient(to bottom, rgba(219, 39, 119, 0.9), rgba(244, 63, 94, 1));
+        }
+
+        /* Ambient glowing background blobs */
+        .glowing-blob {
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(80px);
+            opacity: 0.2;
+            z-index: 0;
+            pointer-events: none;
+            animation: float-blob 12s infinite alternate ease-in-out;
+        }
+        @media (min-width: 768px) {
+            .glowing-blob {
+                filter: blur(120px);
+                opacity: 0.25;
+            }
+        }
+
+        @keyframes float-blob {
+            0% { transform: translate(0, 0) scale(1); }
+            50% { transform: translate(20px, -40px) scale(1.1); }
+            100% { transform: translate(-10px, 20px) scale(0.9); }
+        }
+
+        /* Biometric finger pulse animation */
+        .fingerprint-laser {
+            animation: laser-scan 2.5s infinite ease-in-out;
+        }
+
+        @keyframes laser-scan {
+            0%, 100% { top: 0%; opacity: 0; }
+            10% { opacity: 1; }
+            90% { opacity: 1; }
+            100% { top: 100%; opacity: 0; }
+        }
+
+        .pulse-pink {
+            animation: pulse-ring 2s infinite ease-in-out;
+        }
+
+        @keyframes pulse-ring {
+            0% { box-shadow: 0 0 0 0 rgba(219, 39, 119, 0.7); }
+            70% { box-shadow: 0 0 0 15px rgba(219, 39, 119, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(219, 39, 119, 0); }
+        }
+
+        /* Custom Paper Love Letter Scroll (Egyptian Traditional feel but responsive) */
+        .love-letter-paper {
+            background: linear-gradient(to right, #fffdf6, #fbf7eb);
+            color: #2d2620;
+            font-family: 'Cairo', sans-serif;
+            box-shadow: 0 15px 35px -10px rgba(0, 0, 0, 0.7), inset 0 0 30px rgba(139, 92, 26, 0.12);
+            border: 1px dashed #d9b88a;
+            position: relative;
+        }
+
+        .love-letter-paper::before {
+            content: '';
+            position: absolute;
+            top: 0; bottom: 0; right: 25px;
+            width: 1px;
+            background-color: #f3a3a3;
+            opacity: 0.5;
+        }
+        @media (min-width: 768px) {
+            .love-letter-paper::before {
+                right: 40px;
+                width: 2px;
+            }
+        }
+
+        /* CD Vinyl rotation for player */
+        .spin-music {
+            animation: spin 6s infinite linear;
+        }
+
+        @keyframes spin {
+            100% { transform: rotate(360deg); }
+        }
+
+        /* Beautiful interactive birthday cake CSS */
+        .candle-flame {
+            background: radial-gradient(ellipse at bottom, #ffea00 0%, #ff5d00 50%, #7e0000 100%);
+            border-radius: 50% 50% 20% 20%;
+            box-shadow: 0 0 15px #ff5d00;
+            animation: flicker 1.2s infinite alternate ease-in-out;
+            transform-origin: center bottom;
+        }
+
+        @keyframes flicker {
+            0% { transform: scale(1) rotate(-1deg); }
+            50% { transform: scale(1.1) rotate(1.5deg) skewX(2deg); }
+            100% { transform: scale(0.9) rotate(-1.5deg); }
+        }
+
+        /* Heart falling background particles */
+        .falling-heart {
+            position: fixed;
+            pointer-events: none;
+            z-index: 10;
+            animation: fall linear forwards;
+        }
+
+        @keyframes fall {
+            0% { transform: translateY(-10vh) rotate(0deg) scale(0); opacity: 0; }
+            10% { opacity: 0.8; }
+            90% { opacity: 0.8; }
+            100% { transform: translateY(110vh) rotate(360deg) scale(1); opacity: 0; }
+        }
+    </style>
+</head>
+<body class="relative min-h-screen pb-24 md:pb-16">
+
+    <!-- Glowing Blobs -->
+    <div class="glowing-blob bg-pink-700 w-48 h-48 md:w-96 md:h-96 top-10 left-10"></div>
+    <div class="glowing-blob bg-rose-900 w-64 h-64 md:w-[500px] md:h-[500px] bottom-10 right-10"></div>
+    <div class="glowing-blob bg-purple-950 w-48 h-48 md:w-80 md:h-80 top-1/3 left-1/3"></div>
+
+    <!-- CANVAS FOR CONFETTI (Blowing out candles) -->
+    <canvas id="confetti-canvas" class="fixed inset-0 w-full h-full pointer-events-none z-50 hidden"></canvas>
+
+    <!-- ==================== 1. SECURITY SCREEN (LOCK SCREEN) ==================== -->
+    <div id="lock-screen" class="fixed inset-0 bg-[#070104] z-[100] flex flex-col items-center justify-center p-4 overflow-y-auto transition-all duration-1000 ease-in-out">
+        <div class="max-w-md w-full bg-black/70 backdrop-blur-xl border border-pink-500/20 rounded-3xl p-6 md:p-8 shadow-2xl shadow-pink-950/40 relative overflow-hidden my-auto">
+            
+            <!-- Security Header -->
+            <div class="text-center mb-6">
+                <div class="inline-flex p-2.5 bg-pink-500/10 rounded-2xl border border-pink-500/30 mb-3 animate-bounce">
+                    <i class="fa-solid fa-shield-heart text-pink-500 text-2xl md:text-3xl"></i>
+                </div>
+                <h2 class="text-xl md:text-2xl font-bold text-pink-100 mb-1.5 font-cairo">منطقة أمان السنيورة</h2>
+                <p class="text-pink-300/70 text-xs md:text-sm">البوابة دي متفتحتش ومصممة مخصوص لـ "شهودتي السكر".. اتفضلي دخلي البصمة أو الباسورد بتاعنا يا ملكة قلبي.</p>
+            </div>
+
+            <!-- Fingerprint Biometric Scanner -->
+            <div class="flex flex-col items-center justify-center mb-6">
+                <button id="fingerprint-btn" class="relative w-20 h-20 md:w-24 md:h-24 bg-gradient-to-tr from-pink-900/40 to-rose-950/40 border-2 border-pink-500/30 rounded-full flex items-center justify-center cursor-pointer transition-all duration-300 hover:border-pink-500 pulse-pink focus:outline-none select-none">
+                    <!-- Fingerprint Icon -->
+                    <i class="fa-solid fa-fingerprint text-4xl md:text-5xl text-pink-500 transition-all duration-300"></i>
+                    <!-- Scanning laser bar -->
+                    <div id="laser-bar" class="absolute left-0 right-0 h-1 bg-pink-400 shadow-[0_0_10px_#db2777] fingerprint-laser hidden"></div>
+                </button>
+                <span id="scan-status" class="text-pink-400 font-semibold text-xs md:text-sm mt-3 animate-pulse text-center">اضغطي هنا مطولاً لتفعيل البصمة الحيوية 👆</span>
+                <div id="scan-percentage" class="text-pink-100 text-[10px] md:text-xs font-mono mt-1 opacity-0">0% جاري التعرف...</div>
+            </div>
+
+            <!-- Lock separator -->
+            <div class="flex items-center my-4">
+                <div class="flex-grow h-[1px] bg-pink-500/10"></div>
+                <span class="px-2.5 text-pink-500/50 text-[10px] uppercase font-bold">أو الكود السري</span>
+                <div class="flex-grow h-[1px] bg-pink-500/10"></div>
+            </div>
+
+            <!-- Password PIN Input Area -->
+            <div class="space-y-3">
+                <div class="relative">
+                    <input type="text" id="pin-input" readonly placeholder="اكتبي الباسورد السري بتاعنا..." class="w-full bg-pink-950/30 border border-pink-500/30 rounded-xl py-2.5 px-4 text-center text-pink-100 placeholder-pink-500/40 focus:outline-none focus:border-pink-500 focus:ring-1 focus:ring-pink-500 tracking-wider text-base md:text-lg font-mono">
+                    <div id="pin-error" class="text-red-400 text-xs text-center mt-1.5 hidden font-semibold">الكود غلط يا روحي.. ركزي وافتكري كود حبنا!</div>
+                </div>
+
+                <!-- Styled numeric and cute pin-pad (Full Grid 0-9 for entering date passwords) -->
+                <div class="grid grid-cols-3 gap-1.5 text-center text-pink-100 text-sm md:text-base">
+                    <button class="bg-pink-950/20 hover:bg-pink-900/30 border border-pink-500/10 py-2 rounded-lg font-bold font-mono cursor-pointer transition-all active:scale-95" onclick="addPin('1')">1</button>
+                    <button class="bg-pink-950/20 hover:bg-pink-900/30 border border-pink-500/10 py-2 rounded-lg font-bold font-mono cursor-pointer transition-all active:scale-95" onclick="addPin('2')">2</button>
+                    <button class="bg-pink-950/20 hover:bg-pink-900/30 border border-pink-500/10 py-2 rounded-lg font-bold font-mono cursor-pointer transition-all active:scale-95" onclick="addPin('3')">3</button>
+                    <button class="bg-pink-950/20 hover:bg-pink-900/30 border border-pink-500/10 py-2 rounded-lg font-bold font-mono cursor-pointer transition-all active:scale-95" onclick="addPin('4')">4</button>
+                    <button class="bg-pink-950/20 hover:bg-pink-900/30 border border-pink-500/10 py-2 rounded-lg font-bold font-mono cursor-pointer transition-all active:scale-95" onclick="addPin('5')">5</button>
+                    <button class="bg-pink-950/20 hover:bg-pink-900/30 border border-pink-500/10 py-2 rounded-lg font-bold font-mono cursor-pointer transition-all active:scale-95" onclick="addPin('6')">6</button>
+                    <button class="bg-pink-950/20 hover:bg-pink-900/30 border border-pink-500/10 py-2 rounded-lg font-bold font-mono cursor-pointer transition-all active:scale-95" onclick="addPin('7')">7</button>
+                    <button class="bg-pink-950/20 hover:bg-pink-900/30 border border-pink-500/10 py-2 rounded-lg font-bold font-mono cursor-pointer transition-all active:scale-95" onclick="addPin('8')">8</button>
+                    <button class="bg-pink-950/20 hover:bg-pink-900/30 border border-pink-500/10 py-2 rounded-lg font-bold font-mono cursor-pointer transition-all active:scale-95" onclick="addPin('9')">9</button>
+                    <button class="bg-pink-950/25 hover:bg-pink-900/40 border border-pink-500/10 py-2 rounded-lg font-bold font-mono cursor-pointer transition-all text-pink-300 active:scale-95" onclick="addPin('-')">-</button>
+                    <button class="bg-pink-950/20 hover:bg-pink-900/30 border border-pink-500/10 py-2 rounded-lg font-bold font-mono cursor-pointer transition-all active:scale-95" onclick="addPin('0')">0</button>
+                    <button class="bg-pink-950/25 hover:bg-pink-900/40 border border-pink-500/10 py-2 rounded-lg font-bold font-mono cursor-pointer transition-all text-pink-300 active:scale-95" onclick="addPin('_')">_</button>
+                    <button class="bg-pink-950/20 hover:bg-pink-900/30 border border-pink-500/10 py-2 rounded-lg font-bold text-xs cursor-pointer transition-all text-pink-400 active:scale-95" onclick="clearPin()">مسح</button>
+                    <button class="bg-pink-900/50 hover:bg-pink-800/70 border border-pink-500/30 py-2 rounded-lg font-bold text-xs cursor-pointer transition-all col-span-2 text-pink-200 active:scale-95" onclick="submitPin()">دخول 🤍</button>
+                </div>
+            </div>
+
+            <!-- Dev Signature bottom of lock screen -->
+            <div class="mt-6 text-center text-[9px] text-pink-500/40 tracking-wider">
+                DEVELOPED WITH LOVE BY HER FOREVER PARTNER • v2.6.1
+            </div>
+        </div>
+    </div>
+
+
+    <!-- ==================== MAIN CONTENT (UNLOCKED SITE) ==================== -->
+    <div id="main-content" class="hidden opacity-0 transition-opacity duration-1000 ease-in-out">
+        
+        <!-- ==================== NAVIGATION BAR ==================== -->
+        <nav class="sticky top-0 bg-black/80 backdrop-blur-md border-b border-pink-500/10 z-40 transition-all">
+            <div class="max-w-6xl mx-auto px-4 py-3 flex items-center justify-between">
+                <a href="#" class="flex items-center gap-1.5">
+                    <span class="text-pink-500 text-xl md:text-2xl font-black font-cairo tracking-tighter">شهودتي ❤️</span>
+                </a>
+                <div class="flex items-center gap-3 md:gap-6 text-xs md:text-sm font-semibold">
+                    <a href="#album-section" class="hover:text-pink-400 transition-colors">الصور</a>
+                    <a href="#cake-section" class="hover:text-pink-400 transition-colors">التورتة</a>
+                    <a href="#letter-section" class="bg-pink-600 hover:bg-pink-500 px-3 py-1.5 md:px-4 md:py-2 rounded-full text-white transition-all shadow-lg shadow-pink-600/30 text-[10px] sm:text-xs">الجواب</a>
+                </div>
+            </div>
+        </nav>
+
+        <!-- ==================== HEADER HERO SECTION ==================== -->
+        <header class="max-w-6xl mx-auto px-4 pt-8 md:pt-12 pb-4 text-center relative z-10">
+            <div class="inline-block px-3 py-1 bg-pink-500/10 border border-pink-500/30 rounded-full text-pink-400 text-[10px] md:text-xs font-bold mb-4 animate-pulse">
+                ✨ موقع سري صُنع خصيصاً لملكة قلبي بمناسبة عيد ميلادها ✨
+            </div>
+            
+            <div class="relative w-28 h-28 sm:w-36 sm:h-36 md:w-44 md:h-44 mx-auto mb-6 md:mb-8 group">
+                <!-- Glowing Aura behind the image -->
+                <div class="absolute inset-0 bg-gradient-to-tr from-pink-600 to-rose-400 rounded-full blur-md opacity-70 group-hover:opacity-100 transition-opacity duration-500 animate-pulse"></div>
+                <!-- Main Portrait Container -->
+                <div class="relative w-full h-full rounded-full overflow-hidden border-4 border-pink-500/80 shadow-2xl shadow-pink-500/40 bg-pink-950/40">
+                    <img src="png1.jpeg" 
+                     style="object-position: center 20%;"
+                        alt="ملكة قلبي" 
+                     class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                </div>
+                <!-- Mini Floating Heart Tag -->
+                <div class="absolute -bottom-1 -left-1 bg-pink-600 text-white w-8 h-8 md:w-9 md:h-9 rounded-full flex items-center justify-center shadow-lg shadow-pink-600/50 text-xs md:text-sm border border-pink-400 animate-bounce">
+                    ❤️
+                </div>
+            </div>
+
+            <h1 class="text-3xl sm:text-5xl md:text-7xl font-black mb-3 bg-gradient-to-r from-pink-400 via-rose-400 to-amber-200 bg-clip-text text-transparent font-cairo leading-tight">كل سنة وأنتي منورة دنيتي يا شهودتي!</h1>
+            <p class="text-sm sm:text-base md:text-xl text-pink-100/80 max-w-2xl mx-auto leading-relaxed px-2">
+                يا سنيورة قلبي، ويا أحلى من شافت عيني.. الويب سايت ده اتبرمج كود كود بحبك وجدعنتك وبصمة إيدك في حياتي. عيد ميلاد سعيد يا غالية.
+            </p>
+        </header>
+
+
+        <!-- ==================== PAGE 1: THE 4 PHOTO POLAROID GALLERY ==================== -->
+        <section id="album-section" class="max-w-6xl mx-auto px-4 py-8 md:py-12 relative z-10">
+            <div class="text-center mb-8 md:mb-12">
+                <h2 class="text-2xl md:text-3xl font-bold text-pink-300 font-cairo">📸 ألبوم السنيورة سحر العيون</h2>
+                <p class="text-xs md:text-sm text-pink-300/60 mt-1">أربع لقطات محفورة في كود قلبي وعيني، كل صورة حكاية تلمس الروح</p>
+                <!-- Image Swap Info for the user developer -->
+            </div>
+
+            <!-- 4 Polaroid Grids -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
+                <!-- Polaroid 1 -->
+                <div class="bg-white p-3 md:p-4 shadow-2xl rounded-sm transform sm:-rotate-2 hover:rotate-0 hover:scale-105 transition-all duration-300 cursor-pointer group">
+                    <div class="aspect-[3/4] w-full overflow-hidden bg-pink-100 relative rounded">
+                        <img src="png2.jpeg" alt=style="object-position: center 8%;" "صورة شهودتي 1" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+                        <div class="absolute inset-0 bg-gradient-to-t from-pink-950/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-2 md:p-3">
+                            <span class="text-white text-[10px] md:text-xs font-bold bg-pink-600/80 px-2 py-1 rounded">وحش الكون🌸</span>
+                        </div>
+                    </div>
+                    <div class="pt-3 pb-1 text-center text-[#2d2620]">
+                        <p class="font-cairo font-bold text-sm md:text-md text-[#db2777]">الضحكة اللي بتنور عتمتي</p>
+                        <p class="text-[10px] md:text-xs text-gray-500 mt-1">من يوم ما شوفتك وعيني مبقتش بتشوف غيرك</p>
+                    </div>
+                </div>
+                <!-- Polaroid 2 -->
+                <div class="bg-white p-3 md:p-4 shadow-2xl rounded-sm transform sm:rotate-3 hover:rotate-0 hover:scale-105 transition-all duration-300 cursor-pointer group">
+                    <div class="aspect-[3/4] w-full overflow-hidden bg-pink-100 relative rounded">
+                        <img src="png3.jpeg" alt="صورة شهودتي 2" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+                        
+                        <div class=" object-position: center 20% absolute inset-0 bg-gradient-to-t from-pink-950/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-2 md:p-3">
+                            <span class="text-white text-[10px] md:text-xs font-bold bg-pink-600/80 px-2 py-1 rounded">ملكة قلبي وفرحه عمري👑</span>
+                        </div>
+                    </div>
+                    <div class="pt-3 pb-1 text-center text-[#2d2620]">
+                        <p class="font-cairo font-bold text-sm md:text-md text-[#db2777]">بنتي ونور عيني </p>
+                        <p class="text-[10px] md:text-xs text-gray-500 mt-1">البنت اللي بمليون راجل اللي قلبي اتطمن معاها</p>
+                    </div>
+                </div>
+
+                <!-- Polaroid 3 -->
+                <div class="bg-white p-3 md:p-4 shadow-2xl rounded-sm transform sm:-rotate-3 hover:rotate-0 hover:scale-105 transition-all duration-300 cursor-pointer group">
+                    <div class="aspect-[3/4] w-full overflow-hidden bg-pink-100 relative rounded">
+                        <img src="png4 (1).jpeg" alt="صورة شهودتي 3" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+                        <div class="absolute inset-0 bg-gradient-to-t from-pink-950/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-2 md:p-3">
+                            <span class="text-white text-[10px] md:text-xs font-bold bg-pink-600/80 px-2 py-1 rounded">الجدعنة والحنية والروقان ❤️</span>
+                        </div>
+                    </div>
+                    <div class="pt-3 pb-1 text-center text-[#2d2620]">
+                        <p class="font-cairo font-bold text-sm md:text-md text-[#db2777]">احن قلب وارق بسكوته</p>
+                        <p class="text-[10px] md:text-xs text-gray-500 mt-1">حب عمري وبنتي وفرحه ايامي بجد</p>
+                    </div>
+                </div>
+
+                <!-- Polaroid 4 -->
+                <div class="bg-white p-3 md:p-4 shadow-2xl rounded-sm transform sm:rotate-1 hover:rotate-0 hover:scale-105 transition-all duration-300 cursor-pointer group">
+                    <div class="aspect-[3/4] w-full overflow-hidden bg-pink-100 relative rounded">
+                        <img src="png5.jpeg" alt="صورة شهودتي 4" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+                        <div class="absolute inset-0 bg-gradient-to-t from-pink-950/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-2 md:p-3">
+                            <span class="text-white text-[10px] md:text-xs font-bold bg-pink-600/80 px-2 py-1 rounded">لأخر العمر سوا 💕</span>
+                        </div>
+                    </div>
+                    <div class="pt-3 pb-1 text-center text-[#2d2620]">
+                        <p class="font-cairo font-bold text-sm md:text-md text-[#db2777]">شهودتي وشريكة الرحلة</p>
+                        <p class="text-[10px] md:text-xs text-gray-500 mt-1">كل خطوة بكرة هنمشيها سوا لغاية بيتنا الدافي</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- ==================== PAGE 2: BIRTHDAY CAKE & COUNTDOWN ==================== -->
+        <section id="cake-section" class="max-w-6xl mx-auto px-4 py-12 md:py-16 relative z-10 border-t border-pink-500/10">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
+                
+                <!-- Left Column: The Interactive Cake -->
+                <div class="flex flex-col items-center p-6 md:p-8 bg-pink-950/10 border border-pink-500/15 rounded-3xl backdrop-blur-sm shadow-xl">
+                    <h3 class="text-xl md:text-2xl font-bold text-pink-300 mb-6 md:mb-8 font-cairo text-center">🎂 إطفي شمعتك واتمنى أمنيتك يا سنيورة!</h3>
+                    
+                    <!-- Birthday Cake Render using Custom SVG/CSS -->
+                    <div class="relative w-48 h-48 md:w-64 md:h-64 mb-6 flex items-end justify-center">
+                        <!-- Cake Container -->
+                        <div class="w-44 h-32 md:w-56 md:h-40 relative flex flex-col justify-end">
+                            <!-- Candle 1 -->
+                            <div class="absolute top-0 left-8 md:left-12 w-2.5 md:w-3 h-9 md:h-12 bg-blue-400 rounded-sm shadow-lg z-20">
+                                <div id="flame-1" class="candle-flame absolute -top-4 md:-top-5 left-1/2 -translate-x-1/2 w-3 md:w-4 h-5 md:h-6"></div>
+                            </div>
+                            <!-- Candle 2 (Center) -->
+                            <div class="absolute top-[-8px] md:top-[-10px] left-1/2 -translate-x-1/2 w-3 md:w-3.5 h-11 md:h-14 bg-pink-400 rounded-sm shadow-lg z-20">
+                                <div id="flame-2" class="candle-flame absolute -top-4 md:-top-5 left-1/2 -translate-x-1/2 w-3.5 md:w-4.5 h-6 md:h-7"></div>
+                            </div>
+                            <!-- Candle 3 -->
+                            <div class="absolute top-0 right-8 md:right-12 w-2.5 md:w-3 h-9 md:h-12 bg-yellow-400 rounded-sm shadow-lg z-20">
+                                <div id="flame-3" class="candle-flame absolute -top-4 md:-top-5 left-1/2 -translate-x-1/2 w-3 md:w-4 h-5 md:h-6"></div>
+                            </div>
+
+                            <!-- Tier 1 (Top Tier) -->
+                            <div class="h-12 md:h-16 w-28 md:w-36 bg-pink-300 rounded-t-xl mx-auto border-b-4 border-pink-400 relative z-10 flex items-center justify-around overflow-hidden shadow-inner">
+                                <div class="w-2.5 h-5 bg-rose-500 rounded-b-full"></div>
+                                <div class="w-2.5 h-5 bg-rose-500 rounded-b-full"></div>
+                                <div class="w-2.5 h-5 bg-rose-500 rounded-b-full"></div>
+                                <div class="w-2.5 h-5 bg-rose-500 rounded-b-full"></div>
+                            </div>
+                            <!-- Tier 2 (Bottom Tier) -->
+                            <div class="h-16 md:h-20 w-40 md:w-52 bg-pink-500 rounded-t-2xl border-b-8 border-pink-600 relative z-0 flex items-center justify-around overflow-hidden shadow-lg">
+                                <div class="w-3.5 h-7 bg-rose-700 rounded-b-full"></div>
+                                <div class="w-3.5 h-7 bg-rose-700 rounded-b-full"></div>
+                                <div class="w-3.5 h-7 bg-rose-700 rounded-b-full"></div>
+                                <div class="w-3.5 h-7 bg-rose-700 rounded-b-full"></div>
+                                <div class="w-3.5 h-7 bg-rose-700 rounded-b-full"></div>
+                            </div>
+                            <!-- Cake Stand -->
+                            <div class="w-48 md:w-60 h-2 md:h-3 bg-amber-100 rounded-full shadow-md"></div>
+                        </div>
+                    </div>
+
+                    <!-- Blow Button -->
+                    <button id="blow-button" class="bg-gradient-to-r from-pink-600 to-rose-500 hover:from-pink-500 hover:to-rose-400 text-white font-bold py-2.5 px-6 md:py-3 md:px-8 rounded-full shadow-lg shadow-pink-500/30 transition-all duration-300 hover:scale-105 active:scale-95 cursor-pointer font-cairo text-sm md:text-base">
+                        🕯️ اضغطي هنا لإطفاء الشمع والاحتفال!
+                    </button>
+                    <p id="wish-message" class="text-pink-300/80 mt-4 text-center text-xs md:text-sm font-semibold hidden animate-bounce">تم كتم الشمع بنجاح! طارت الأمنية للسما يا حبيبتي 🌠❤️</p>
+                </div>
+
+                <!-- Right Column: The Dual Countdown Timer -->
+                <div class="flex flex-col justify-center space-y-8 md:space-y-10">
+                    
+                    <!-- 1. Birthday Countdown -->
+                    <div>
+                        <div class="flex items-center gap-2.5 mb-3">
+                            <div class="p-2 bg-pink-500/10 rounded-xl border border-pink-500/30">
+                                <i class="fa-solid fa-cake-candles text-pink-500 text-base md:text-lg"></i>
+                            </div>
+                            <h3 class="text-lg md:text-2xl font-bold text-pink-200 font-cairo">العد التنازلي لعيد ميلادك (18-6-2026)</h3>
+                        </div>
+                        <p class="text-xs md:text-sm text-pink-100/70 mb-4 leading-relaxed">
+                            كل ثانية بتعدي هي مكسب كبير ليا طول ما إنتي منورة طريقي وحياتي. العداد التفاعلي ده بيحسب الأيام والدقائق لليوم اللي اتولدت فيه أحلى بنوتة في الدنيا!
+                        </p>
+
+                        <!-- Birthday Countdown Boxes -->
+                        <div class="grid grid-cols-4 gap-2 md:gap-3 text-center">
+                            <div class="bg-pink-950/20 border border-pink-500/20 p-2 md:p-3 rounded-xl backdrop-blur">
+                                <span id="days-val" class="text-xl sm:text-2xl md:text-4xl font-black text-pink-400 font-mono">00</span>
+                                <div class="text-[9px] md:text-[10px] text-pink-300/70 font-semibold mt-0.5">أيام</div>
+                            </div>
+                            <div class="bg-pink-950/20 border border-pink-500/20 p-2 md:p-3 rounded-xl backdrop-blur">
+                                <span id="hours-val" class="text-xl sm:text-2xl md:text-4xl font-black text-pink-400 font-mono">00</span>
+                                <div class="text-[9px] md:text-[10px] text-pink-300/70 font-semibold mt-0.5">ساعات</div>
+                            </div>
+                            <div class="bg-pink-950/20 border border-pink-500/20 p-2 md:p-3 rounded-xl backdrop-blur">
+                                <span id="minutes-val" class="text-xl sm:text-2xl md:text-4xl font-black text-pink-400 font-mono">00</span>
+                                <div class="text-[9px] md:text-[10px] text-pink-300/70 font-semibold mt-0.5">دقائق</div>
+                            </div>
+                            <div class="bg-pink-950/20 border border-pink-500/20 p-2 md:p-3 rounded-xl backdrop-blur">
+                                <span id="seconds-val" class="text-xl sm:text-2xl md:text-4xl font-black text-pink-400 font-mono">00</span>
+                                <div class="text-[9px] md:text-[10px] text-pink-300/70 font-semibold mt-0.5">ثواني</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 2. Promise Countdown -->
+                    <div class="border-t border-pink-500/10 pt-6 md:pt-8">
+                        <div class="flex items-center gap-2.5 mb-3">
+                            <div class="p-2 bg-amber-500/10 rounded-xl border border-amber-500/30">
+                                <i class="fa-solid fa-ring text-amber-500 text-base md:text-lg"></i>
+                            </div>
+                            <h3 class="text-lg md:text-2xl font-bold text-amber-200 font-cairo">تاريخ الوعد المنتظر (30-3-2030)</h3>
+                        </div>
+                        <p class="text-xs md:text-sm text-pink-100/70 mb-4 leading-relaxed">
+                            اليوم اللي عيني شايلاه ومرتباله.. اليوم اللي هتدخلي فيه بيتنا منورة بفستانك الأبيض، وعهدي ليكي لآخر الخط.
+                        </p>
+
+                        <!-- Promise Countdown Boxes -->
+                        <div class="grid grid-cols-4 gap-2 md:gap-3 text-center">
+                            <div class="bg-pink-950/20 border border-amber-500/20 p-2 md:p-3 rounded-xl backdrop-blur">
+                                <span id="promise-days-val" class="text-xl sm:text-2xl md:text-4xl font-black text-amber-400 font-mono">00</span>
+                                <div class="text-[9px] md:text-[10px] text-amber-300/70 font-semibold mt-0.5">أيام</div>
+                            </div>
+                            <div class="bg-pink-950/20 border border-amber-500/20 p-2 md:p-3 rounded-xl backdrop-blur">
+                                <span id="promise-hours-val" class="text-xl sm:text-2xl md:text-4xl font-black text-amber-400 font-mono">00</span>
+                                <div class="text-[9px] md:text-[10px] text-amber-300/70 font-semibold mt-0.5">ساعات</div>
+                            </div>
+                            <div class="bg-pink-950/20 border border-amber-500/20 p-2 md:p-3 rounded-xl backdrop-blur">
+                                <span id="promise-minutes-val" class="text-xl sm:text-2xl md:text-4xl font-black text-amber-400 font-mono">00</span>
+                                <div class="text-[9px] md:text-[10px] text-amber-300/70 font-semibold mt-0.5">دقائق</div>
+                            </div>
+                            <div class="bg-pink-950/20 border border-amber-500/20 p-2 md:p-3 rounded-xl backdrop-blur">
+                                <span id="promise-seconds-val" class="text-xl sm:text-2xl md:text-4xl font-black text-amber-400 font-mono">00</span>
+                                <div class="text-[9px] md:text-[10px] text-amber-300/70 font-semibold mt-0.5">ثواني</div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </section>
+
+
+        <!-- ==================== FLOATING MUSIC PLAYER ==================== -->
+        <div class="fixed bottom-3 left-3 right-3 md:bottom-6 md:left-6 md:right-auto z-50 bg-black/85 backdrop-blur-lg border border-pink-500/30 rounded-2xl p-3 md:p-4 shadow-2xl flex items-center gap-3 md:gap-4 transition-all duration-300 hover:border-pink-500">
+            <!-- Hidden native Audio element loaded with beautiful soft romantic birthday tune -->
+            <audio id="romantic-audio" loop src="04_-_Maak_Alby-[AudioTrimmer.com].mp3"></audio>
+            
+            <!-- Spinning Disk Image -->
+            <div class="relative w-12 h-12 md:w-16 md:h-16 flex-shrink-0">
+                <div id="vinyl-disk" class="w-full h-full rounded-full bg-gradient-to-tr from-pink-700 to-amber-900 flex items-center justify-center border-2 border-pink-500 shadow-inner">
+                    <i class="fa-solid fa-compact-disc text-white text-2xl md:text-3xl"></i>
+                </div>
+            </div>
+
+            <!-- Track Info and control controls -->
+            <div class="flex-grow min-w-0">
+                <p class="text-[10px] md:text-xs text-pink-400 font-semibold"> عيد ميلاد شهودتي 💖</p>
+                <p class="text-xs md:text-sm font-bold text-pink-100 font-cairo truncate max-w-[120px] sm:max-w-[150px]">كل سنة وإنتي روحي وعمري</p>
+                <div class="flex items-center gap-2 md:gap-3 mt-1.5">
+                    <button id="play-btn" class="w-7 h-7 md:w-8 md:h-8 rounded-full bg-pink-600 hover:bg-pink-500 flex items-center justify-center text-white text-xs cursor-pointer focus:outline-none transition-all">
+                        <i id="play-icon" class="fa-solid fa-play"></i>
+                    </button>
+                    <!-- Volume control -->
+                    <input type="range" id="vol-slider" min="0" max="1" step="0.1" value="0.5" class="w-16 md:w-20 accent-pink-500 h-1 rounded-lg cursor-pointer">
+                    <span class="text-[9px] md:text-[10px] text-pink-400/80 font-mono">Vol</span>
+                </div>
+            </div>
+        </div>
+
+
+        <!-- ==================== PAGE 3: THE HEARTFELT 1100-WORD LOVE LETTER ==================== -->
+        <section id="letter-section" class="max-w-4xl mx-auto px-4 py-12 relative z-10 border-t border-pink-500/10">
+            <div class="text-center mb-8 md:mb-12">
+                <div class="inline-flex p-2.5 bg-pink-500/10 rounded-2xl border border-pink-500/30 mb-3">
+                    <i class="fa-solid fa-envelope-open-text text-pink-500 text-2xl md:text-3xl"></i>
+                </div>
+                <h2 class="text-2xl md:text-4xl font-black text-pink-100 font-cairo">✉️ جواب الحب المخصوص لملكة قلبي</h2>
+                <p class="text-xs md:text-sm text-pink-300/70 mt-1">رسالة مكتوبة بحبر المشاعر والجدعنة ومخصصة لأغلى ما عندي</p>
+            </div>
+
+            <!-- Letter Container -->
+            <div class="love-letter-paper p-6 sm:p-8 md:p-12 rounded-3xl shadow-2xl relative overflow-hidden text-right leading-loose tracking-wide">
+                
+                <!-- Beautifully formatted custom letter -->
+                <div class="space-y-6 text-[#2d2620] font-cairo text-sm sm:text-base md:text-lg">
+                    <!-- Elegant Custom Header requested by user -->
+                    <div class="text-center mb-8 border-b-2 border-dashed border-[#d9b88a]/40 pb-6">
+                        <p class="text-xs sm:text-sm text-gray-500 font-bold tracking-widest mb-1.5">بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ</p>
+                        <h3 class="text-lg sm:text-2xl font-black text-rose-900">إلى نور عيني و حبيبتي شهد ❤️</h3>
+                    </div>
+
+                    <p class="font-bold text-rose-900 text-base sm:text-lg md:text-xl">
+                        يا شهودتي يا روح قلبي ونور عيني وكل دنيتي من أولها لآخرها بصي بقى يا ست البنات وركزي في كل كلمة طالعة من جوة جوة قلبي عشان الكلام ده مش أي كلام ده كلام متدوزن بالذهب ومكتوب بدمي وبنبض قلبي اللي مبيعرفش ينبض غير باسمك أنتِ وبس يا أغلى من عمري كله أنا عايزك تعرفي إن الليلة دي مش ليلة عادية في السنة دي ليلة ميلاد الفرحة في عمري كله اليوم اللي جيتي فيه الدنيا عشان تنوريها وتكوني من نصيبي أنتِ الحتة الحلوة اللي في دنيتي كلها والضحكة اللي بتطلع من قلبي بجد ومن غير أي تمثيل.
+                    </p>
+
+                    <p>
+                        أنا من قبلك كنت ماشي في الدنيا دي على عمايا وبخبط وخلاص ومش فارقة معايا أي حاجة لحد ما جيتي أنتِ ونورتِ ضلمتي وعمرتِ كل الخراب اللي كان فيا وبقيتِ أنتِ السند والضهر والروح اللي بتنفس بيها والنعمة اللي ببوس إيدي وش وضهر كل يوم عشان ربنا رزقني بيها وحافظ عليها في قلبي يا بنت الأصول يا أصيلة يا اللي وشك كله خير ورزق عليا ومن ساعة ما دخلتِ حياتي والدنيا بقت تضحكلي وبقى ليها طعم ولون تاني خالص مكنتش أعرفه قبلك أنا لو لفيت الدنيا دي كلها طول بعرض بكعب داير ورحت شرق وغرب مش هلاقي ضفر واحدة زيك ولا في حنيتك ولا في طيبة قلبك ولا في جدعنتك اللي بتسوى الدنيا وما فيها في عيني.
+                    </p>
+
+                    <p>
+                        يا شهودتي يا أحلى حاجة حصلت في عمري كله وفي أيامي اللي فاتت واللي جاية كمان أنا عايزك تتأكدي وميتوزنش في عقلك الشك لحظة واحدة إنك مش مجرد حبيبة عادية ولا كلام من بتاع الروايات والمسلسلات ده أنتِ حتة من روحي ونفسي اللي طالع وداخل ولو غبتِ عن عيني ثانية واحدة بحس إن الهوا قاطع عني ومش قادر أتنفس والكل في الدنيا دي عارف ومتأكد إن أنا ماليش غيرك ولا عيني بتشوف ولا هتشوف غيرك في وسط الملايين دي كلها أنتِ الملكة اللي قاعدة ومتربعة على عرش قلبي ومفيش مخلوق في الدنيا دي يقدر يهز شعرة من مكانك يا روح قلبي من جوة.
+                    </p>
+
+                    <p>
+                        أنا بنام وبصحى وبقوم وبقعد وبفكر فيكي وبدعي ربنا في كل سجدة وفي كل وقت إنه يخليكِ ليا وميحرمنيش من طول صوتك ولا من نظرة عينك أبدًا ويبعد عننا العين والناس اللي متصليش على النبي لما تشوف جمالك ورقتك وطيبتك يا قمر منور في سمايا ومضلله على حياتي كلها أنا معاكِ وبقولهالك قدام الدنيا كلها وبعلو صوتي أنا بيكِ بطل وبأقوى على أي حاجة صعبة في الدنيا دي ومستعد أهد جبال وأقف في وش الكل عشان خاطر ضحكة واحدة من شفايفك دي عشان ضحكتك عندي بالدنيا وما فيها وبتساوي الكون كله باللي فيه.
+                    </p>
+
+                    <p>
+                        ومن هنا ورايح مفيش أي حاجة في الدنيا هتبعدني عنك ولا مخلوق هيقدر يقف في طريقنا طول ما إحنا مع بعض وبنحب بعض وإيدنا في إيد بعض وقلب واحد وضهر لبعض في المرة قبل الحلوة وفي التعب قبل الفرح يا عمري كله يا صاحبة صاحبي وحبيبة عيني ونور دنيتي وسري وكل حاجة حلوة في الأيام دي أنا لو قعدت أكتبلك من هنا للسنة الجاية كلام بمناسبة عيد ميلادك مش هيكفي ربع ولا حتى جزء صغير من اللي في قلبي ليكِ يا غالية يا أميرة قلبي وروحي كلها أنا بعشق الأرض اللي بتمشي عليها وبموت في تفاصيلك كلها في زعلك وفي رضاكِ وفي قمصتك وفي كل كلمة بتقوليها وربنا يعلم إنك عندي بالدنيا وما فيها يا شهودتي يا ست الكل يا قمر الزمان كله.
+                    </p>
+
+                    <p>
+                        وكل سنة وأنتِ منورة دنيتي ومعايا وفي قلبي يا أغلى من عمري ونبض قلبي اللي عايش بيه وبقولهالك بأعلى صوت بعشقك يا ست البنات وعيد ميلاد سعيد يا روح الروح ويا رب دايما مع بعض والسنوات الجاية نكون في بيتنا وسوا ورافعين راسنا ومحققين كل اللي بنحلم بيه يا أجدع بنوتة في الدنيا دي كلها بحبك ومقدرش أعيش من غيرك ثانية واحدة يا كل دنيتي وحياتي وجاي أقولك كمان إن الليلة دي ليلتك لوحدك يا وش السعد عليا وعلينا وعلي دنيتي كلها.
+                    </p>
+
+                    <p>
+                        ربنا يخليكي ليا يا شهودتي يا أحلى من شافت عيني يا مالكة قلبي برقتك وبحبك اللي ملوش مثيل في الكون دا كله بحبك وبموت فيكي يا غالية ويا شيخة دنيتي كلها أنتِ الأمان اللي بدور عليه في وسط الخوف وأنتِ الحضن الدافي اللي بيلمني من بعد التعب والبهدلة طول اليوم أنا لو لفيت بلاد وبلاد وقابلت ناس وأشكال عمري ما هلاقي قلب نضيف وصافي زي قلبك ده اللي مفيش فيه ذرة قسوة ولا كبرياء معايا أنتِ دايماً بتستحمليني في ضيقتي وعصبيتي وبتعرفي تروقيني بكلمة واحدة حلوة من بقك العسل ده ربنا يديمك في حياتي نعمة كبيرة وفرحة مابتخلصش أبدًا يا رب.
+                    </p>
+
+                    <p>
+                        أنا بوعدك في يوم ميلادك ده قدام ربنا وقدام نفسي إن عمري ما هخذلك ولا هكسر بخاطرك في يوم من الأيام وهفضل دايماً شايلك جوة نني عيني ومقفل عليكي ومحدش يلمحك غيري أنا وبس يا حورية نزلت من السما عشان تنور دنيتي الضلمة دي كل سنة وأنتِ الطيبة والحنينة وكل سنة وأنتِ البطلة اللي مفيش منها اتنين في دنيتي بحبك يا شهودتي يا وش السعد والخير كله عليا يا أغلى عليا من نفسي وروحي وعمري كله يا مالكة قلبي وعقلي وروحي وكل تفصيلة فيا بعشقك وكل سنة والدنيا أحلى بوجودك فيها يا كل دنيتي وعقبال مليون سنة وإحنا سوا ومفيش حاجة في الكون تقدر تفرقنا أبدًا يا عمري.
+                    </p>
+                </div>
+
+                <div class="mt-8 pt-4 border-t-2 border-dashed border-[#d9b88a]/40 text-left">
+                    <p class="font-cairo text-xs sm:text-sm text-[#8b5c1a] italic">مع كل حبي ونبض قلبي للأبد،</p>
+                    <p class="font-bold text-rose-900 font-cairo text-base sm:text-lg mt-1">هديه من حبيبك ومبرمجك اللي بيموت فيكي💻❤️</p>
+                </div>
+
+            </div>
+        </section>
+
+
+        <!-- ==================== FOOTER ==================== -->
+        <footer class="max-w-6xl mx-auto px-4 py-6 text-center text-xs text-pink-300/40 relative z-10 border-t border-pink-500/10 mb-20 md:mb-0">
+            <p>صنع بكل الحب لي حبيبيه عمري وفرحه ايامي "شهودتي" • 2026</p>
+            <p class="mt-1 font-mono text-[9px]">• Made by eng omar hesham💻❤️ </p>
+        </footer>
+
+    </div>
+
+    <!-- ==================== JAVASCRIPT LOGIC ==================== -->
+    <script>
+        // System variables
+        let pinCode = "";
+        // Accept multiple formats of 15_9_2024 to make it foolproof
+        const allowedPins = ["15_9_2024", "15092024", "15-9-2024", "15/9/2024", "shahd", "1234"];
+        
+        // 1. PIN PAD ACTIONS
+        function addPin(num) {
+            if(pinCode.length < 15) {
+                pinCode += num;
+                document.getElementById('pin-input').value = pinCode;
+            }
+        }
+        
+        function clearPin() {
+            pinCode = "";
+            document.getElementById('pin-input').value = "";
+            document.getElementById('pin-error').classList.add('hidden');
+        }
+        
+        function submitPin() {
+            const cleanPin = pinCode.trim().toLowerCase();
+            if (allowedPins.includes(cleanPin)) {
+                unlockWebsite();
+            } else {
+                document.getElementById('pin-error').classList.remove('hidden');
+                pinCode = "";
+                document.getElementById('pin-input').value = "";
+                // Visual vibration on error
+                document.getElementById('pin-input').classList.add('animate-shake');
+                setTimeout(() => {
+                    document.getElementById('pin-input').classList.remove('animate-shake');
+                }, 500);
+            }
+        }
+
+        // 2. BIOMETRIC FINGERPRINT SCANNING EFFECT
+        const fingerBtn = document.getElementById('fingerprint-btn');
+        const laserBar = document.getElementById('laser-bar');
+        const scanStatus = document.getElementById('scan-status');
+        const scanPerc = document.getElementById('scan-percentage');
+        let scanInterval = null;
+        let progress = 0;
+
+        // Support touch & mouse events flawlessly on iPhone/Android & PC
+        fingerBtn.addEventListener('mousedown', startScan);
+        fingerBtn.addEventListener('touchstart', startScan);
+        window.addEventListener('mouseup', stopScan);
+        window.addEventListener('touchend', stopScan);
+
+        function startScan(e) {
+            e.preventDefault();
+            laserBar.classList.remove('hidden');
+            scanPerc.classList.remove('opacity-0');
+            scanStatus.textContent = "جاري قراءة الحنية والبصمة... الحقي الضغط!";
+            scanStatus.classList.remove('text-pink-400');
+            scanStatus.classList.add('text-amber-400');
+            
+            progress = 0;
+            scanInterval = setInterval(() => {
+                progress += Math.floor(Math.random() * 8) + 3;
+                if(progress >= 100) {
+                    progress = 100;
+                    clearInterval(scanInterval);
+                    unlockWebsite();
+                }
+                scanPerc.textContent = `${progress}% جاري فحص بصمة السنيورة...`;
+            }, 100);
+        }
+
+        function stopScan() {
+            if (scanInterval && progress < 100) {
+                clearInterval(scanInterval);
+                laserBar.classList.add('hidden');
+                scanPerc.classList.add('opacity-0');
+                scanStatus.textContent = "اضغطي هنا مطولاً لتفعيل البصمة الحيوية 👆";
+                scanStatus.classList.add('text-pink-400');
+                scanStatus.classList.remove('text-amber-400');
+            }
+        }
+
+        function unlockWebsite() {
+            // Synthesize success chime sound with Web Audio API
+            playSuccessChime();
+
+            // Slide out lock screen
+            const lockScreen = document.getElementById('lock-screen');
+            const mainContent = document.getElementById('main-content');
+            
+            lockScreen.classList.add('-translate-y-full');
+            mainContent.classList.remove('hidden');
+            
+            setTimeout(() => {
+                lockScreen.classList.add('hidden');
+                mainContent.classList.add('opacity-100');
+                startHeartsRain();
+                initCountdown();
+                // Play music background automatically
+                toggleAudio(true);
+            }, 1000);
+        }
+
+        // Web Audio success chime
+        function playSuccessChime() {
+            try {
+                const AudioContext = window.AudioContext || window.webkitAudioContext;
+                const ctx = new AudioContext();
+                const osc = ctx.createOscillator();
+                const gain = ctx.createGain();
+                
+                osc.type = "sine";
+                osc.connect(gain);
+                gain.connect(ctx.destination);
+                
+                osc.frequency.setValueAtTime(523.25, ctx.currentTime); // C5
+                osc.frequency.setValueAtTime(659.25, ctx.currentTime + 0.15); // E5
+                osc.frequency.setValueAtTime(783.99, ctx.currentTime + 0.3); // G5
+                osc.frequency.setValueAtTime(1046.50, ctx.currentTime + 0.45); // C6
+                
+                gain.gain.setValueAtTime(0.1, ctx.currentTime);
+                gain.gain.exponentialRampToValueAtTime(0.01, ctx.currentTime + 0.8);
+                
+                osc.start();
+                osc.stop(ctx.currentTime + 0.8);
+            } catch(e) {
+                console.log("Audio API not supported directly yet.");
+            }
+        }
+
+        // 3. FALLING HEARTS BACKGROUND SYSTEM
+        function startHeartsRain() {
+            const heartChars = ['❤️', '💖', '💕', '💗', '⭐', '✨'];
+            setInterval(() => {
+                const heart = document.createElement('div');
+                heart.className = 'falling-heart';
+                heart.textContent = heartChars[Math.floor(Math.random() * heartChars.length)];
+                heart.style.left = Math.random() * 100 + 'vw';
+                heart.style.animationDuration = (Math.random() * 3 + 3) + 's';
+                heart.style.fontSize = (Math.random() * 1.2 + 0.8) + 'rem';
+                document.body.appendChild(heart);
+                
+                // Clean up heart element after animation completes
+                setTimeout(() => {
+                    heart.remove();
+                }, 6000);
+            }, 400);
+        }
+
+        // 4. MUSIC PLAYER SYSTEM
+        const audioEl = document.getElementById('romantic-audio');
+        const playBtn = document.getElementById('play-btn');
+        const playIcon = document.getElementById('play-icon');
+        const volSlider = document.getElementById('vol-slider');
+        const vinylDisk = document.getElementById('vinyl-disk');
+
+        playBtn.addEventListener('click', () => {
+            toggleAudio();
+        });
+
+        volSlider.addEventListener('input', (e) => {
+            audioEl.volume = e.target.value;
+        });
+
+        function toggleAudio(forcePlay = null) {
+            const shouldPlay = forcePlay !== null ? forcePlay : audioEl.paused;
+            if (shouldPlay) {
+                audioEl.play().then(() => {
+                    playIcon.className = "fa-solid fa-pause";
+                    vinylDisk.classList.add('spin-music');
+                }).catch(err => {
+                    console.log("Audio autoplay was restricted. User action required.");
+                });
+            } else {
+                audioEl.pause();
+                playIcon.className = "fa-solid fa-play";
+                vinylDisk.classList.remove('spin-music');
+            }
+        }
+
+        // 5. BIRTHDAY & PROMISE COUNTDOWN CALCULATORS
+        function initCountdown() {
+            // Target Birthday: June 18, 2026
+            const birthdayTarget = new Date("2026-06-18T00:00:00");
+            
+            // Target Promise Date: March 30, 2030
+            const promiseTarget = new Date("2030-03-30T00:00:00");
+
+            function updateTimers() {
+                const now = new Date();
+                
+                // --- Birthday Calculation ---
+                const diffBirthday = birthdayTarget - now;
+                if (diffBirthday > 0) {
+                    const d = Math.floor(diffBirthday / (1000 * 60 * 60 * 24));
+                    const h = Math.floor((diffBirthday % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                    const m = Math.floor((diffBirthday % (1000 * 60 * 60)) / (1000 * 60));
+                    const s = Math.floor((diffBirthday % (1000 * 60)) / 1000);
+
+                    document.getElementById('days-val').textContent = String(d).padStart(2, '0');
+                    document.getElementById('hours-val').textContent = String(h).padStart(2, '0');
+                    document.getElementById('minutes-val').textContent = String(m).padStart(2, '0');
+                    document.getElementById('seconds-val').textContent = String(s).padStart(2, '0');
+                } else {
+                    document.getElementById('days-val').textContent = "00";
+                    document.getElementById('hours-val').textContent = "00";
+                    document.getElementById('minutes-val').textContent = "00";
+                    document.getElementById('seconds-val').textContent = "00";
+                }
+
+                // --- Promise Calculation ---
+                const diffPromise = promiseTarget - now;
+                if (diffPromise > 0) {
+                    const dProj = Math.floor(diffPromise / (1000 * 60 * 60 * 24));
+                    const hProj = Math.floor((diffPromise % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                    const mProj = Math.floor((diffPromise % (1000 * 60 * 60)) / (1000 * 60));
+                    const sProj = Math.floor((diffPromise % (1000 * 60)) / 1000);
+
+                    document.getElementById('promise-days-val').textContent = String(dProj).padStart(2, '0');
+                    document.getElementById('promise-hours-val').textContent = String(hProj).padStart(2, '0');
+                    document.getElementById('promise-minutes-val').textContent = String(mProj).padStart(2, '0');
+                    document.getElementById('promise-seconds-val').textContent = String(sProj).padStart(2, '0');
+                } else {
+                    document.getElementById('promise-days-val').textContent = "00";
+                    document.getElementById('promise-hours-val').textContent = "00";
+                    document.getElementById('promise-minutes-val').textContent = "00";
+                    document.getElementById('promise-seconds-val').textContent = "00";
+                }
+            }
+
+            updateTimers();
+            setInterval(updateTimers, 1000);
+        }
+
+        // 6. BLOW OUT CANDLES & CONFETTI RAIN SYSTEM
+        const blowBtn = document.getElementById('blow-button');
+        const canvas = document.getElementById('confetti-canvas');
+        const ctx = canvas.getContext('2d');
+        let animationFrameId;
+
+        blowBtn.addEventListener('click', () => {
+            // Blow out all candles visually
+            document.getElementById('flame-1').style.opacity = '0';
+            document.getElementById('flame-2').style.opacity = '0';
+            document.getElementById('flame-3').style.opacity = '0';
+            
+            document.getElementById('wish-message').classList.remove('hidden');
+            
+            // Synthesize cute blowout sound
+            playBlowSound();
+
+            // Trigger beautiful confetti rain
+            canvas.classList.remove('hidden');
+            resizeCanvas();
+            initConfetti();
+        });
+
+        function playBlowSound() {
+            try {
+                const AudioContext = window.AudioContext || window.webkitAudioContext;
+                const audioCtx = new AudioContext();
+                
+                // Synthesize wind blowing sound
+                const bufferSize = audioCtx.sampleRate * 1.5;
+                const buffer = audioCtx.createBuffer(1, bufferSize, audioCtx.sampleRate);
+                const data = buffer.getChannelData(0);
+                for (let i = 0; i < bufferSize; i++) {
+                    data[i] = Math.random() * 2 - 1;
+                }
+                
+                const noise = audioCtx.createBufferSource();
+                noise.buffer = buffer;
+                
+                const filter = audioCtx.createBiquadFilter();
+                filter.type = 'lowpass';
+                filter.frequency.setValueAtTime(300, audioCtx.currentTime);
+                filter.frequency.exponentialRampToValueAtTime(10, audioCtx.currentTime + 1.2);
+                
+                const noiseGain = audioCtx.createGain();
+                noiseGain.gain.setValueAtTime(0.2, audioCtx.currentTime);
+                noiseGain.gain.exponentialRampToValueAtTime(0.01, audioCtx.currentTime + 1.2);
+                
+                noise.connect(filter);
+                filter.connect(noiseGain);
+                noiseGain.connect(audioCtx.destination);
+                
+                noise.start();
+                noise.stop(audioCtx.currentTime + 1.2);
+            } catch (e) {
+                console.log("Sound synthesizer unavailable.");
+            }
+        }
+
+        // Confetti Engine
+        let confettiArray = [];
+        const colors = ['#f43f5e', '#db2777', '#ec4899', '#f43f5e', '#e11d48', '#fbbf24', '#34d399', '#60a5fa'];
+
+        function resizeCanvas() {
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+        }
+
+        window.addEventListener('resize', resizeCanvas);
+
+        class Confetti {
+            constructor() {
+                this.x = Math.random() * canvas.width;
+                this.y = Math.random() * -canvas.height;
+                this.size = Math.random() * 6 + 4;
+                this.color = colors[Math.floor(Math.random() * colors.length)];
+                this.speedY = Math.random() * 4 + 4;
+                this.speedX = Math.random() * 4 - 2;
+                this.rotation = Math.random() * 360;
+                this.rotationSpeed = Math.random() * 4 - 2;
+            }
+
+            update() {
+                this.y += this.speedY;
+                this.x += this.speedX;
+                this.rotation += this.rotationSpeed;
+                if (this.y > canvas.height) {
+                    this.y = Math.random() * -50;
+                    this.x = Math.random() * canvas.width;
+                }
+            }
+
+            draw() {
+                ctx.save();
+                ctx.translate(this.x, this.y);
+                ctx.rotate((this.rotation * Math.PI) / 180);
+                ctx.fillStyle = this.color;
+                ctx.fillRect(-this.size / 2, -this.size / 2, this.size, this.size);
+                ctx.restore();
+            }
+        }
+
+        function initConfetti() {
+            confettiArray = [];
+            for (let i = 0; i < 120; i++) {
+                confettiArray.push(new Confetti());
+            }
+            animateConfetti();
+        }
+
+        function animateConfetti() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            confettiArray.forEach((c) => {
+                c.update();
+                c.draw();
+            });
+            animationFrameId = requestAnimationFrame(animateConfetti);
+            
+            // Auto stop confetti after 12 seconds
+            setTimeout(() => {
+                cancelAnimationFrame(animationFrameId);
+                canvas.classList.add('hidden');
+                ctx.clearRect(0, 0, canvas.width, canvas.height);
+            }, 12000);
+        }
+    </script>
+</body>
+</html>
